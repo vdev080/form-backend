@@ -6,7 +6,12 @@ const cors = require('cors');
 const app = express();
 
 // 🔹 Allow CORS for all origins (For debugging)
-app.use(cors());
+app.use(
+    cors({
+      origin: "*", 
+      credentials: true,
+    })
+  );
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
